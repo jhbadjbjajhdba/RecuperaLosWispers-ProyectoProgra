@@ -1,0 +1,6 @@
+import tkinter
+
+ventana1 = tkinter.Tk()
+ventana1.geometry("5000x3750")
+
+ventana1.mainloop()
