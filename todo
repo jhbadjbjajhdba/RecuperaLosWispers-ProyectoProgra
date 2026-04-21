@@ -2,41 +2,47 @@ import tkinter
 import threading
 import time
 
+#Esto debería ir al final
 
-
-
-
-def cambiarestadisticas(path):
-    img = tkinter.PhotoImage(file= f"{path}.png")
-    lable= tkinter.Label()
-
-
-#Aqui se escogen los wispers
-def inicio_juego():
-    ventana_selecciion = tkinter.Toplevel()
-    ventana_selecciion.geometry("1024x768")
-
-    imagen_fondo2 = tkinter.PhotoImage(file="./i/f2.png")
-    lbl_imagen_fondo2 = tkinter.Label(ventana_selecciion, image= imagen_fondo2)
-    lbl_imagen_fondo2.pack()
-
-    ###Botón de prueba
-    boton_select = tkinter.PhotoImage(file="./i/bs.png")
-    boton_select = tkinter.Button(ventana_selecciion,   command= lambda: (cambiarestadisticas("bs")).place(x= 432, y= 352.5))
-    
-    ventana_selecciion.mainloop()
-
-
-#ventana principal siempre al final
 ventana_principal = tkinter.Tk()
 ventana_principal.geometry("1024x768")
 
 imagen_fondo1 = tkinter.PhotoImage(file="./i/f1.png")
 lbl_imagen_fondo1 = tkinter.Label(ventana_principal, image= imagen_fondo1)
 lbl_imagen_fondo1.pack()
+
+
+
+
+#def pueblo_inicio():
+ #   fondo_pueblo = tkinter.PhotoImage(file="./i/bm0.png")
+  #  lbl_fondo_pueblo = tkinter.Label(ventana_selecciion, image = fondo_pueblo)
+
+def prueba():
+    return 1
+
+#Aqui se escogen los wispers
+def inicio_juego():
+    ventana_selecciion = tkinter.Toplevel()
+    ventana_selecciion.geometry("1024x768")
+
+    #Imagen del mapa
+    imagen_fondo2 = tkinter.PhotoImage(file="./i/m1.png")
+    lbl_imagen_fondo2 = tkinter.Label(ventana_selecciion, image= imagen_fondo2)
+    lbl_imagen_fondo2.pack()
+
+    #Boton de la casita
+    casitamagica = tkinter.PhotoImage(file="./i/bm.png")
+    boton_casita = tkinter.Button(ventana_selecciion, image= casitamagica, command= prueba).place(x= 20, y= 25)    
+    
+    ventana_selecciion.mainloop()
+
+def boton_inpueblo():
+    
+
+#ventana principal siempre al final
+
 boton_star = tkinter.PhotoImage(file="./i/bs.png")
 boton_play = tkinter.Button(ventana_principal, image= boton_star, command= inicio_juego).place(x= 432, y= 352.5)
 
 ventana_principal.mainloop()
-
-
